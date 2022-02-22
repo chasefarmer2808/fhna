@@ -1,0 +1,27 @@
+{
+  "id": "nav_button",
+  "type": "SharedSlice",
+  "name": "NavButton",
+  "description": "NavButton",
+  "variations": [
+    {
+      "id": "default-slice",
+      "name": "Default slice",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "NavButton",
+      "primary": {
+        "label": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Label",
+            "placeholder": "Navigation link label",
+            "allowTargetBlank": true,
+            "single": "hyperlink"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

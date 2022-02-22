@@ -1,0 +1,8 @@
+{
+  "apiEndpoint": "https://fhna.prismic.io/api/v2",
+  "libraries": [
+    "@/slices"
+  ],
+  "_latest": "0.1.0",
+  "localSliceSimulatorURL": "https://localhost:3000/slice-simulator"
+}

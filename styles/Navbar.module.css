@@ -1,0 +1,22 @@
+.nav-link-container {
+    display: none;
+}
+
+.nav-link-container-active {
+    display: block;
+}
+
+.nav-menu-btn {
+    display: inline-block;
+}
+
+@media screen and (min-width: 600px) {
+    .nav-link-container {
+        display: inline-flex;
+        flex-direction: row;
+    }
+
+    .nav-menu-btn {
+        display: none;
+    }
+}

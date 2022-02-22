@@ -1,0 +1,14 @@
+.nav-link-button {
+    padding: 8px;
+    background: linear-gradient(transparent, transparent 50%, var(--bg-color-accent) 50%, var(--bg-color-accent));
+    background-size: 100% 200%;
+    transition: background .3s ease-out;
+}
+
+.nav-link-button:hover {
+    background-position: 100% 100%;
+}
+
+.nav-link-active {
+    border-bottom: 2px solid var(--bg-color-accent);
+}

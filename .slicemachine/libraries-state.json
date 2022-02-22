@@ -1,0 +1,62 @@
+{
+  "slices": {
+    "components": {
+      "nav_button": {
+        "library": "slices",
+        "id": "nav_button",
+        "name": "NavButton",
+        "description": "NavButton",
+        "model": {
+          "id": "nav_button",
+          "type": "SharedSlice",
+          "name": "NavButton",
+          "description": "NavButton",
+          "variations": [
+            {
+              "id": "default-slice",
+              "name": "Default slice",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "NavButton",
+              "primary": {
+                "label": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Label",
+                    "placeholder": "Navigation link label",
+                    "allowTargetBlank": true,
+                    "single": "hyperlink"
+                  }
+                }
+              },
+              "items": {}
+            }
+          ]
+        },
+        "mocks": {
+          "default-slice": {
+            "variation": "default-slice",
+            "name": "Default slice",
+            "slice_type": "nav_button",
+            "items": [],
+            "primary": {
+              "label": [
+                {
+                  "type": "paragraph",
+                  "text": "Ipsum fugiat ullamco reprehenderit duis tempor ea sint dolor exercitation exercitation ullamco do quis exercitation cupidatat.",
+                  "spans": []
+                }
+              ]
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "isDirectory": true,
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      }
+    }
+  }
+}

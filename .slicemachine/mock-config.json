@@ -1,0 +1,16 @@
+{
+  "slices": {
+    "NavButton": {
+      "default-slice": {
+        "primary": {
+          "label": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    }
+  }
+}
