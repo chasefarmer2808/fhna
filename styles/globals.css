@@ -1,11 +1,12 @@
 :root {
   --bg-color-primary: #F5F3EF;
   --bg-color-accent: #CFB07B;
+  --nav-height: 8rem;
 }
 
 html,
 body {
-  padding: 0;
+  padding: var(--nav-height) 0 0 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -35,9 +36,14 @@ nav {
   padding-right: 12px;
   position: fixed;
   top: 0;
+  left: 0;
   width: 100vw;
-  transition: top 0.3s;
+  transition: transform 0.3s;
   font-size: 2rem;
+}
+
+.nav-hidden {
+  transform: translateY(calc(-1 * var(--nav-height)));
 }
 
 footer {

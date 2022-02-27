@@ -5,18 +5,18 @@ import { NavLink } from './NavLink';
 
 export const Navbar: React.FC = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [navbarTopPosPx, setNavbarTopPosPx] = useState(0);
+    const [navClass, setNavClass] = useState('');
     const prevScrollPos = useRef(0);
 
     const handleScroll = () => {
         const currentScrollPos = window.scrollY;
 
         if (prevScrollPos.current > currentScrollPos) {
-            // Scrolling up.
-            setNavbarTopPosPx(0);
-        } else {
             // Scrolling down.
-            setNavbarTopPosPx(-50);
+            setNavClass('');
+        } else {
+            // Scrolling up.
+            setNavClass('nav-hidden');
             setMenuOpen(false);
         }
 
@@ -28,7 +28,7 @@ export const Navbar: React.FC = () => {
     }, []);
 
     return (
-        <nav style={{top: navbarTopPosPx}}>
+        <nav className={navClass}>
             <span>FHNA</span>
             <span className={styles['nav-menu-btn']} onClick={() => setMenuOpen(!menuOpen)}>
                 {menuOpen 
