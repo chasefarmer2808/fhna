@@ -31,9 +31,6 @@ nav {
   background-color: var(--bg-color-primary);
   display: grid;
   grid-template-rows: auto auto;
-  grid-template-columns: 1fr auto;
-  padding-left: 8px;
-  padding-right: 12px;
   position: fixed;
   top: 0;
   left: 0;
@@ -71,6 +68,6 @@ button {
   nav {
     grid-template-rows: 100%;
     align-items: center;
-    padding-right: 24px;
+    padding-right: 2.4rem;
   }
 }

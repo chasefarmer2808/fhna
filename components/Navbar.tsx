@@ -29,12 +29,14 @@ export const Navbar: React.FC = () => {
 
     return (
         <nav className={navClass}>
-            <span>FHNA</span>
-            <span className={styles['nav-menu-btn']} onClick={() => setMenuOpen(!menuOpen)}>
-                {menuOpen 
-                    ? <Icon name='cancel' sizeRem={2} />
-                    : <Icon name='hamburger' sizeRem={2} />}
-            </span>
+            <div className={styles['nav-title-container']}>
+                <span>FHNA</span>
+                <span className={styles['nav-menu-btn']} onClick={() => setMenuOpen(!menuOpen)}>
+                    {menuOpen 
+                        ? <Icon name='cancel' sizeRem={2} />
+                        : <Icon name='hamburger' sizeRem={2} />}
+                </span>
+            </div>
             <span className={menuOpen ? styles['nav-link-container-active'] : styles['nav-link-container']}>
                 <NavLink href='/' label='Home' />
                 <NavLink href='/meetings' label='Meetings' />
