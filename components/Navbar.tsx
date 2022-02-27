@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import React, { useState, useRef, useEffect } from 'react';
 import styles from '../styles/Navbar.module.css';
 import { Icon } from './Icon';
@@ -7,6 +8,11 @@ export const Navbar: React.FC = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [navClass, setNavClass] = useState('');
     const prevScrollPos = useRef(0);
+    const router = useRouter();
+
+    useEffect(() => {
+        setMenuOpen(false);
+    }, [router]);
 
     const handleScroll = () => {
         const currentScrollPos = window.scrollY;
