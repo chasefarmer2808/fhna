@@ -1,0 +1,14 @@
+.banner-container {
+  background-size: cover;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-content-container {
+  border-radius: 0.5rem;
+  padding: 8px;
+  font-size: 2rem;
+  background-color: var(--bg-color-transparent);
+}

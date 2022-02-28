@@ -1,21 +1,24 @@
 :root {
-  --bg-color-primary: #F5F3EF;
-  --bg-color-accent: #CFB07B;
-  --nav-height: 8rem;
+  --bg-color-primary: #f5f3ef;
+  --bg-color-accent: #cfb07b;
+  --nav-height: 3.4rem;
+  --bg-color-transparent: #ffffffc9;
 }
 
 html,
 body {
-  padding: var(--nav-height) 0 0 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 10px;
 }
 
+body {
+  padding: var(--nav-height) 0 0 0;
+}
+
 main {
   min-height: 100vh;
-  padding: 4rem 0;
 }
 
 a {
@@ -67,6 +70,7 @@ button {
 @media screen and (min-width: 600px) {
   nav {
     grid-template-rows: 100%;
+    grid-template-columns: 1fr auto;
     align-items: center;
     padding-right: 2.4rem;
   }
