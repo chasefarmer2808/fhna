@@ -16,19 +16,17 @@ export const customLink = (type, element, content, children, index) => (
 
 // Init prismic client used for querying the API.
 export const Client = (req = null) => (
-    Prismic.client(apiEndpoint, createClientOptions(req, accessToken, routeResolver))
+    Prismic.client(apiEndpoint, createClientOptions(req, accessToken))
 );
 
 // Options to be passed to the Client.
 const createClientOptions = (req = null, prismicAccessToken = null, routes = null) => {
     const reqOptions = req ? { req } : {};
     const accessTokenOption = prismicAccessToken ? { accessToken: prismicAccessToken } : {};
-    const routesOption = routes ? { routes: routeResolver.routes } : {};
 
     return {
         ...reqOptions,
         ...accessTokenOption,
-        ...routesOption
     };
 };
 

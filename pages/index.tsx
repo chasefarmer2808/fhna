@@ -1,8 +1,15 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
+import Prismic from '@prismicio/client';
+import Client from '../utils/prismicHelpers';
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
-const Home: NextPage = () => {
+interface HomePagePrismicProps {
+  missionStatement: string;
+  bannerImage: string;
+}
+
+const Home: NextPage<HomePagePrismicProps> = ({ missionStatement, bannerImage }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -15,6 +22,16 @@ const Home: NextPage = () => {
       </main>
     </div>
   )
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const homePageContent = await Client().getByUID('home-pa', 'home-page-1', {})
+
+  console.log(homePageContent)
+
+  return {
+    props: {}
+  }
 }
 
 export default Home
