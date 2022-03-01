@@ -1,6 +1,7 @@
 :root {
   --bg-color-primary: #f5f3ef;
   --bg-color-secondary: rgba(207, 176, 123, 0.5);
+  --bg-color-tertiary: rgba(67, 107, 194, 0.5);
   --bg-color-accent: #cfb07b;
   --bg-color-transparent: #ffffffc9;
   --nav-height: 3.4rem;

@@ -11,17 +11,21 @@ import {
   AnnouncementsFrame,
 } from '../components/AnnouncementsFrame';
 import { Document } from '@prismicio/client/types/documents';
+import { BoardMember, getBoardMembers } from '../api/boardMember';
+import { BoardMemberFrame } from '../components/BoardMemberFrame';
 
 interface HomePagePrismicProps {
   missionstatement: RichTextBlock[];
   bannerimage: ImageField;
   announcements: Announcement[];
+  boardMembers: BoardMember[];
 }
 
 const Home: NextPage<HomePagePrismicProps> = ({
   missionstatement,
   bannerimage,
   announcements,
+  boardMembers,
 }) => {
   return (
     <div className={styles.container}>
@@ -36,6 +40,7 @@ const Home: NextPage<HomePagePrismicProps> = ({
       <main>
         <Banner imgUrl={bannerimage.url} description={missionstatement} />
         <AnnouncementsFrame announcements={announcements} />
+        <BoardMemberFrame boardMembers={boardMembers} />
       </main>
     </div>
   );
@@ -62,11 +67,14 @@ export const getStaticProps: GetStaticProps = async (context) => {
     };
   });
 
+  const boardMembers = await getBoardMembers();
+
   return {
     props: {
       missionstatement,
       bannerimage,
       announcements,
+      boardMembers,
     },
   };
 };
