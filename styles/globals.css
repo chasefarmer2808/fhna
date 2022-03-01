@@ -1,8 +1,9 @@
 :root {
   --bg-color-primary: #f5f3ef;
+  --bg-color-secondary: rgba(207, 176, 123, 0.5);
   --bg-color-accent: #cfb07b;
-  --nav-height: 3.4rem;
   --bg-color-transparent: #ffffffc9;
+  --nav-height: 3.4rem;
 }
 
 html,
@@ -21,6 +22,12 @@ main {
   min-height: 100vh;
 }
 
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -31,9 +38,11 @@ a {
 }
 
 nav {
+  height: var(--nav-height);
   background-color: var(--bg-color-primary);
   display: grid;
   grid-template-rows: auto auto;
+  align-content: center;
   position: fixed;
   top: 0;
   left: 0;
