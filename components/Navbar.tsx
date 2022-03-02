@@ -45,6 +45,7 @@ export const Navbar: React.FC = () => {
             </div>
             <span className={menuOpen ? styles['nav-link-container-active'] : styles['nav-link-container']}>
                 <NavLink href='/' label='Home' />
+                <NavLink href='/about' label='About' />
                 <NavLink href='/meetings' label='Meetings' />
             </span>
         </nav>

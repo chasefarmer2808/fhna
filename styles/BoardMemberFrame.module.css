@@ -1,5 +1,4 @@
 .frame {
-  background-color: var(--bg-color-tertiary);
   display: flex;
   justify-content: center;
 }
