@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import { BoardMember } from '../api/boardMember';
 import styles from '../styles/BoardMemberListing.module.css';
@@ -10,9 +11,20 @@ export const BoardMemberListing: React.FC<BoardMemberListingProps> = ({
   slug,
 }) => {
   return (
-    <div>
-      <h3>{slug.name}</h3>
-      <h4>{slug.role}</h4>
+    <div className={styles['frame']}>
+      <Image
+        className={styles['profile-picture']}
+        src={`${slug.photo.url ? slug.photo.url : '/user.png'}`}
+        alt={`Picture of ${slug.role}`}
+        width={80}
+        height={80}
+        objectFit="cover"
+        objectPosition="center"
+      />
+      <div className={styles['listing-label']}>
+        <h3>{slug.name}</h3>
+        <h4>{slug.role}</h4>
+      </div>
     </div>
   );
 };

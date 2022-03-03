@@ -1,0 +1,16 @@
+.frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-picture {
+  border-radius: 50%;
+}
+
+.listing-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.8rem;
+}
