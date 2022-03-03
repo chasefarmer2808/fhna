@@ -1,0 +1,8 @@
+.site-map {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.social-media-frame {
+  display: flex;
+}
