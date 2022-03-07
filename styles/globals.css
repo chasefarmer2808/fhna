@@ -50,6 +50,8 @@ nav {
   width: 100vw;
   transition: transform 0.3s;
   font-size: 2rem;
+  height: var(--nav-height);
+  z-index: 2; /* Handle relative positioned elements on the page. */
 }
 
 .nav-hidden {
