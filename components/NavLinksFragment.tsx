@@ -7,6 +7,7 @@ export const NavLinksFragment: React.FC = () => {
       <NavLink href="/" label="Home" />
       <NavLink href="/about" label="About" />
       <NavLink href="/meetings" label="Meetings" />
+      <NavLink href="/get-involved" label="Get Involved" />
     </>
   );
 };

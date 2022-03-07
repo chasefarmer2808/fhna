@@ -50,7 +50,6 @@ nav {
   width: 100vw;
   transition: transform 0.3s;
   font-size: 2rem;
-  height: var(--nav-height);
   z-index: 2; /* Handle relative positioned elements on the page. */
 }
 
@@ -86,6 +85,10 @@ button.icon {
 
 button.icon:hover {
   background-color: var(--bg-color-primary);
+}
+
+.frame {
+  padding: 1rem;
 }
 
 .content-frame {

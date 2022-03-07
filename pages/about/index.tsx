@@ -16,7 +16,7 @@ export const About: React.FC<AboutPagePrismicProps> = ({
   boardMembers,
 }) => {
   return (
-    <main className={styles['frame']}>
+    <main className="frame">
       <div className={`${styles['bio-frame']} content-frame`}>
         <h2>About Us</h2>
         <RichText render={bio} />

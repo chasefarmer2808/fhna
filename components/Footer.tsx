@@ -21,6 +21,13 @@ export const Footer: React.FC = () => {
         <a
           target="_blank"
           rel="noreferrer"
+          href="https://twitter.com/FHNA21230"
+        >
+          <Icon name="twitter" sizeRem={3} />
+        </a>
+        <a
+          target="_blank"
+          rel="noreferrer"
           href="https://nextdoor.com/neighborhood/federalhillbaltimoremd--baltimore--md/"
         >
           <Image
