@@ -4,6 +4,8 @@
   --bg-color-tertiary: rgb(135, 45, 35);
   --bg-color-accent: #cfb07b;
   --bg-color-transparent: #ffffffc9;
+  --font-color: white;
+  --font-color-inverse: black;
   --nav-height: 3.5rem;
 }
 
@@ -33,6 +35,19 @@ h3 {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+a.link-button {
+  font-size: 1.8rem;
+  background-color: var(--bg-color-tertiary);
+  color: var(--font-color);
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.1s ease;
+}
+
+a.link-button:active {
+  box-shadow: inset 1px 1px 10px #333;
 }
 
 * {
@@ -95,6 +110,11 @@ button.icon:hover {
   padding: 0.5rem;
   border: 2px solid var(--bg-color-tertiary);
   border-radius: 0.8rem;
+}
+
+.content-action-frame {
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (min-width: 600px) {
