@@ -1,14 +1,19 @@
 .banner-container {
-  background-size: cover;
-  height: 50vh;
+  height: 40vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .banner-content-container {
+  position: absolute;
   border-radius: 0.5rem;
+  margin: 8px;
   padding: 8px;
   font-size: 2rem;
   background-color: var(--bg-color-transparent);
+}
+
+@media screen and (min-width: 600px) {
 }
