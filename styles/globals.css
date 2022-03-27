@@ -149,11 +149,6 @@ button.icon:hover {
   margin: 8px;
 }
 
-.form-actions {
-  display: flex;
-  justify-content: center;
-}
-
 @media screen and (min-width: 600px) {
   nav {
     grid-template-rows: 100%;

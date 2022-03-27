@@ -9,7 +9,7 @@ export const ContactForm: React.FC = () => {
     <Form
       onSubmit={onSubmit}
       render={({ handleSubmit }) => (
-        <form onSubmit={handleSubmit} className={`${styles['contact-form']}`}>
+        <form onSubmit={handleSubmit} className={styles['contact-form']}>
           <div className="form-field">
             <label>Your Name</label>
             <Field name="name" component="input" />
@@ -18,15 +18,15 @@ export const ContactForm: React.FC = () => {
             <label>Your Email</label>
             <Field name="email" component="input" />
           </div>
-          <div className="form-field">
+          <div className={`form-field ${styles['subject-field']}`}>
             <label>Subject</label>
             <Field name="subject" component="input" />
           </div>
-          <div className="form-field">
+          <div className={`form-field ${styles['message-field']}`}>
             <label>Message</label>
             <Field name="message" component="textarea" />
           </div>
-          <div className="form-actions">
+          <div className={styles['form-actions']}>
             <button type="submit" className="primary">
               Submit
             </button>

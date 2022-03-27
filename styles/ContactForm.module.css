@@ -1,3 +1,28 @@
 .contact-form {
   width: 70vw;
 }
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 600px) {
+  .contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 2fr auto;
+  }
+
+  .subject-field {
+    grid-column: span 2;
+  }
+
+  .message-field {
+    grid-column: span 2;
+  }
+
+  .form-actions {
+    grid-column: span 2;
+  }
+}
