@@ -3,12 +3,14 @@ import { RichText, RichTextBlock } from 'prismic-reactjs';
 import { GetStaticProps } from 'next';
 import Client from '../../utils/prismicHelpers';
 import { FilledLinkToWebField } from '@prismicio/types';
+import { Committee, getCommittees } from '../../api/committee';
 
 interface GetInvolvedPagePrismicProps {
   becomememberdescription: RichTextBlock[];
   paypallink: FilledLinkToWebField;
   meetingdescription: RichTextBlock[];
   meetingLink: FilledLinkToWebField;
+  committees: Committee[];
 }
 
 export const GetInvolved: React.FC<GetInvolvedPagePrismicProps> = ({
@@ -16,6 +18,7 @@ export const GetInvolved: React.FC<GetInvolvedPagePrismicProps> = ({
   paypallink,
   meetingdescription,
   meetingLink,
+  committees,
 }) => {
   return (
     <main className="frame">
@@ -26,6 +29,13 @@ export const GetInvolved: React.FC<GetInvolvedPagePrismicProps> = ({
       </div>
       <div className="content-frame">
         <h2>Join a Committee</h2>
+        <ul>
+          {committees.map((committee) => (
+            <li key={committee.name}>
+              {committee.name} - {committee.chairperson}
+            </li>
+          ))}
+        </ul>
       </div>
       <div className="content-frame">
         <h2>Become a Member</h2>
@@ -54,10 +64,14 @@ export const getStaticProps: GetStaticProps = async (context) => {
     await Client().getByUID('meeting-link', 'meeting-link-1', {})
   ).data;
 
+  const committees = await getCommittees();
+  console.log(committees);
+
   return {
     props: {
       ...props,
       meetingLink,
+      committees,
     },
   };
 };
