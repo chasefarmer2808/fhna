@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { SyntheticEvent } from 'react';
 import { Field, Form } from 'react-final-form';
 import styles from '../styles/ContactForm.module.css';
 
 export const ContactForm: React.FC = () => {
-  const onSubmit = () => console.log('Submitted!');
+  const onSubmit = async () => {
+    const res = await fetch('/api/email', {
+      method: 'POST',
+    });
+  };
 
   return (
     <Form
