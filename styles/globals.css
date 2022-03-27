@@ -95,6 +95,19 @@ button {
   cursor: pointer;
 }
 
+button:active {
+  box-shadow: inset 1px 1px 10px #333;
+}
+
+button.primary {
+  font-size: 1.4rem;
+  background-color: var(--bg-color-tertiary);
+  color: var(--font-color);
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.1s ease;
+}
+
 button.icon {
   border-radius: 50%;
 }
@@ -115,6 +128,28 @@ button.icon:hover {
 }
 
 .content-action-frame {
+  display: flex;
+  justify-content: center;
+}
+
+.col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row-center {
+  display: flex;
+  gap: 8px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin: 8px;
+}
+
+.form-actions {
   display: flex;
   justify-content: center;
 }
