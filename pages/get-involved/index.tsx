@@ -65,7 +65,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
   ).data;
 
   const committees = await getCommittees();
-  console.log(committees);
 
   return {
     props: {
