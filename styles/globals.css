@@ -14,7 +14,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-size: 10px;
+  font-size: 15px;
 }
 
 body {
@@ -33,8 +33,9 @@ h3 {
 }
 
 a {
-  color: inherit;
+  color: var(--bg-color-tertiary);
   text-decoration: none;
+  font-weight: bold;
 }
 
 a.link-button {
