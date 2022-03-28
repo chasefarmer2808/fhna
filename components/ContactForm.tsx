@@ -1,4 +1,4 @@
-import React, { SyntheticEvent } from 'react';
+import React, { useState } from 'react';
 import { Field, Form } from 'react-final-form';
 import styles from '../styles/ContactForm.module.css';
 
@@ -10,7 +10,12 @@ export interface FormValues {
 }
 
 export const ContactForm: React.FC = () => {
+  const [sendingEmail, setSendingEmail] = useState(false);
+  const [emailSuccessful, setEmailSuccessful] = useState<Boolean | undefined>();
+
   const onSubmit = async (values: FormValues) => {
+    setSendingEmail(true);
+
     const res = await fetch('/api/email', {
       method: 'POST',
       headers: {
@@ -18,6 +23,14 @@ export const ContactForm: React.FC = () => {
       },
       body: JSON.stringify(values),
     });
+
+    setSendingEmail(false);
+
+    if (res.status === 200) {
+      setEmailSuccessful(true);
+    } else {
+      setEmailSuccessful(false);
+    }
   };
 
   return (
@@ -42,9 +55,21 @@ export const ContactForm: React.FC = () => {
             <Field name="message" component="textarea" />
           </div>
           <div className={styles['form-actions']}>
-            <button type="submit" className="primary">
-              Submit
-            </button>
+            {emailSuccessful === false && (
+              <div>
+                Oops! Something went wrong. Please try again or refresh the
+                page.
+              </div>
+            )}
+            {sendingEmail ? (
+              <div>Sending email...</div>
+            ) : emailSuccessful ? (
+              <div>Success! We will be in touch!</div>
+            ) : (
+              <button type="submit" className="primary">
+                Submit
+              </button>
+            )}
           </div>
         </form>
       )}
