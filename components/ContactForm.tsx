@@ -2,10 +2,21 @@ import React, { SyntheticEvent } from 'react';
 import { Field, Form } from 'react-final-form';
 import styles from '../styles/ContactForm.module.css';
 
+export interface FormValues {
+  name: String;
+  email: String;
+  subject: String;
+  message: String;
+}
+
 export const ContactForm: React.FC = () => {
-  const onSubmit = async () => {
+  const onSubmit = async (values: FormValues) => {
     const res = await fetch('/api/email', {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(values),
     });
   };
 
