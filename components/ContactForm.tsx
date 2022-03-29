@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Field, Form } from 'react-final-form';
+import { TextInput } from './TextInput';
 import styles from '../styles/ContactForm.module.css';
 
 export interface FormValues {
@@ -9,9 +10,21 @@ export interface FormValues {
   message: String;
 }
 
+type FormValidator = (value: string) => string | undefined;
+
 export const ContactForm: React.FC = () => {
   const [sendingEmail, setSendingEmail] = useState(false);
   const [emailSuccessful, setEmailSuccessful] = useState<Boolean | undefined>();
+
+  // Form validators
+  const required = (value: string) => (value ? undefined : 'Required');
+  const composeValidators =
+    (...validators: any) =>
+    (value: string) =>
+      validators.reduce(
+        (error: string, validator: FormValidator) => error || validator(value),
+        undefined
+      );
 
   const onSubmit = async (values: FormValues) => {
     setSendingEmail(true);
@@ -40,7 +53,11 @@ export const ContactForm: React.FC = () => {
         <form onSubmit={handleSubmit} className={styles['contact-form']}>
           <div className="form-field">
             <label>Your Name</label>
-            <Field name="name" component="input" />
+            <Field
+              name="name"
+              component={TextInput}
+              validate={composeValidators(required)}
+            />
           </div>
           <div className="form-field">
             <label>Your Email</label>
