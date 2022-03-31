@@ -18,6 +18,8 @@ export const ContactForm: React.FC = () => {
 
   // Form validators
   const required = (value: string) => (value ? undefined : 'Required');
+  const maxLength = (max: number) => (value: string) =>
+    value.length <= max ? undefined : 'Too many characters';
   const composeValidators =
     (...validators: any) =>
     (value: string) =>
@@ -55,7 +57,7 @@ export const ContactForm: React.FC = () => {
             <Field
               name="name"
               component={TextInput}
-              validate={composeValidators(required)}
+              validate={composeValidators(required, maxLength(50))}
               label="First Name"
             />
           </div>
@@ -63,7 +65,7 @@ export const ContactForm: React.FC = () => {
             <Field
               name="email"
               component={TextInput}
-              validate={composeValidators(required)}
+              validate={composeValidators(required, maxLength(50))}
               label="Email Address"
             />
           </div>
@@ -71,7 +73,7 @@ export const ContactForm: React.FC = () => {
             <Field
               name="subject"
               component={TextInput}
-              validate={composeValidators(required)}
+              validate={composeValidators(required, maxLength(75))}
               label="Subject"
             />
           </div>
@@ -79,7 +81,7 @@ export const ContactForm: React.FC = () => {
             <Field
               name="message"
               component={TextInput}
-              validate={composeValidators(required)}
+              validate={composeValidators(required, maxLength(500))}
               label="Message"
               isTextArea={true}
             />
