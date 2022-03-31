@@ -116,6 +116,15 @@ button.icon:hover {
   background-color: var(--bg-color-primary);
 }
 
+label {
+  margin-bottom: 4px;
+  margin-right: 8px;
+}
+
+input, textarea {
+  width: 100%;
+}
+
 .frame {
   padding: 1rem;
 }
@@ -147,6 +156,10 @@ button.icon:hover {
   display: flex;
   flex-direction: column;
   margin: 8px;
+}
+
+.error {
+  color: red;
 }
 
 @media screen and (min-width: 600px) {

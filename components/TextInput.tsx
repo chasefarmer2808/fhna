@@ -4,6 +4,7 @@ import { FieldRenderProps } from 'react-final-form';
 interface TextInputProps extends FieldRenderProps<string, HTMLElement> {
   label: string;
   type: string;
+  isTextArea?: boolean;
 }
 
 export const TextInput: React.FC<TextInputProps> = ({
@@ -11,15 +12,18 @@ export const TextInput: React.FC<TextInputProps> = ({
   type,
   input,
   meta,
+  isTextArea = false,
 }) => {
   const { invalid, error, touched } = meta;
   const hasLocalError = !!invalid && !!touched;
 
   return (
     <div>
-      <label>{label}</label>
-      <input type={type} {...input} />
-      {hasLocalError && <span>{error}</span>}
+      <div>
+        <label>{label}</label>
+        {hasLocalError && <span className="error">{error}</span>}
+      </div>
+      {isTextArea ? <textarea {...input} /> : <input type={type} {...input} />}
     </div>
   );
 };

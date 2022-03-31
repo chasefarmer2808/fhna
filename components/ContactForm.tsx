@@ -52,24 +52,37 @@ export const ContactForm: React.FC = () => {
       render={({ handleSubmit }) => (
         <form onSubmit={handleSubmit} className={styles['contact-form']}>
           <div className="form-field">
-            <label>Your Name</label>
             <Field
               name="name"
               component={TextInput}
               validate={composeValidators(required)}
+              label="First Name"
             />
           </div>
           <div className="form-field">
-            <label>Your Email</label>
-            <Field name="email" component="input" />
+            <Field
+              name="email"
+              component={TextInput}
+              validate={composeValidators(required)}
+              label="Email Address"
+            />
           </div>
           <div className={`form-field ${styles['subject-field']}`}>
-            <label>Subject</label>
-            <Field name="subject" component="input" />
+            <Field
+              name="subject"
+              component={TextInput}
+              validate={composeValidators(required)}
+              label="Subject"
+            />
           </div>
           <div className={`form-field ${styles['message-field']}`}>
-            <label>Message</label>
-            <Field name="message" component="textarea" />
+            <Field
+              name="message"
+              component={TextInput}
+              validate={composeValidators(required)}
+              label="Message"
+              isTextArea={true}
+            />
           </div>
           <div className={styles['form-actions']}>
             {emailSuccessful === false && (
