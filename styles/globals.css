@@ -39,6 +39,9 @@ a {
 }
 
 a.link-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 1.4rem;
   background-color: var(--bg-color-tertiary);
   color: var(--font-color);

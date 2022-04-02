@@ -1,3 +1,25 @@
 .bio-frame {
   margin-bottom: 0.4rem;
 }
+
+.link-grid {
+  display: grid;
+  gap: 0.4rem;
+  justify-items: center;
+  margin-top: 0.4rem;
+}
+
+.link-grid > a {
+  width: 50%;
+}
+
+@media screen and (min-width: 600px) {
+  .link-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .link-grid > a {
+    width: 90%;
+  }
+}
