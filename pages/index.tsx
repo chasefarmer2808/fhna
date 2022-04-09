@@ -11,6 +11,7 @@ import {
   AnnouncementsFrame,
 } from '../components/AnnouncementsFrame';
 import { Document } from '@prismicio/client/types/documents';
+import { GalleryBannerGrid } from '../components/GalleryBannerGrid';
 
 interface HomePagePrismicProps {
   missionstatement: RichTextBlock[];
@@ -23,6 +24,13 @@ const Home: NextPage<HomePagePrismicProps> = ({
   bannerimage,
   announcements,
 }) => {
+  const bannerImages = [
+    'https://images.prismic.io/fhna/3d9f1587-477d-401c-90fa-3181f4446b5a_fh5.jpg?auto=compress,format',
+    'https://images.prismic.io/fhna/e91181f1-b827-425c-b886-3b2be4b36a0d_fh4.jpg?auto=compress,format',
+    'https://images.prismic.io/fhna/3d0588af-9e78-49ed-bfc8-0a0cb8404fdc_fh3.jpg?auto=compress,format',
+    'https://images.prismic.io/fhna/e5437efe-ce9c-4cb6-97d2-32c9e3f593b0_fh1.jpg?auto=compress,format',
+  ];
+
   return (
     <div className={styles.container}>
       <Head>
@@ -34,7 +42,8 @@ const Home: NextPage<HomePagePrismicProps> = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Banner imgUrl={bannerimage.url} description={missionstatement} />
+        <GalleryBannerGrid imageUrls={bannerImages} />
+        {/* <Banner imgUrl={bannerimage.url} description={missionstatement} /> */}
         <AnnouncementsFrame announcements={announcements} />
       </main>
     </div>
