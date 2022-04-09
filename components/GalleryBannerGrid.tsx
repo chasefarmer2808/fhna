@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import styles from '../styles/GalleryBannerGrid.module.css';
 
@@ -11,6 +11,12 @@ export const GalleryBannerGrid: React.FC<GalleryBannerGridProps> = ({
   imageUrls,
   bannerMsg,
 }) => {
+  const [opacities, setOpacities] = useState<number[]>([]);
+
+  useEffect(() => {
+    setOpacities(imageUrls.map(() => 0));
+  }, [imageUrls]);
+
   const imgCount = 4;
 
   const getGridItemColSpan = (itemNum: number) => {
@@ -43,13 +49,25 @@ export const GalleryBannerGrid: React.FC<GalleryBannerGridProps> = ({
           <div
             key={url}
             className={styles['grid-item']}
-            style={{ gridColumn: getGridItemColSpan(index) }}
+            style={{
+              gridColumn: getGridItemColSpan(index),
+              opacity: opacities[index],
+            }}
           >
             <Image
               src={url}
               layout="fill"
               objectFit="cover"
               alt="Site banner"
+              onLoad={() =>
+                setTimeout(() => {
+                  setOpacities((ops) => {
+                    const temp = [...ops];
+                    temp[index] = 1;
+                    return temp;
+                  });
+                }, 200 * index)
+              }
             />
           </div>
         ))}
