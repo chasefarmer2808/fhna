@@ -1,5 +1,14 @@
-.grid-container {
+.banner-container {
+  display: block;
+  height: 60vh;
+  overflow: hidden;
+  position: relative;
   margin: 0.8rem;
+  border-radius: 1rem;
+}
+
+.grid-container {
+  display: none;
 }
 
 .grid-item {
@@ -11,10 +20,15 @@
 
 @media screen and (min-width: 600px) {
   .grid-container {
+    margin: 0.8rem;
     height: 40rem;
     display: grid;
     gap: 1rem;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 20rem 20rem;
+  }
+
+  .banner-container {
+    display: none;
   }
 }

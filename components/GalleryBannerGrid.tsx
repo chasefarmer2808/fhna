@@ -29,16 +29,31 @@ export const GalleryBannerGrid: React.FC<GalleryBannerGridProps> = ({
   };
 
   return (
-    <div className={styles['grid-container']}>
-      {imageUrls.map((url, index) => (
-        <div
-          key={url}
-          className={styles['grid-item']}
-          style={{ gridColumn: getGridItemColSpan(index) }}
-        >
-          <Image src={url} layout="fill" objectFit="cover" alt="Site banner" />
-        </div>
-      ))}
-    </div>
+    <>
+      <div className={styles['banner-container']}>
+        <Image
+          src={imageUrls[0]}
+          layout="fill"
+          objectFit="cover"
+          alt="Site banner"
+        />
+      </div>
+      <div className={styles['grid-container']}>
+        {imageUrls.map((url, index) => (
+          <div
+            key={url}
+            className={styles['grid-item']}
+            style={{ gridColumn: getGridItemColSpan(index) }}
+          >
+            <Image
+              src={url}
+              layout="fill"
+              objectFit="cover"
+              alt="Site banner"
+            />
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
