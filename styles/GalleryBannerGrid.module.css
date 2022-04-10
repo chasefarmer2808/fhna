@@ -11,6 +11,24 @@
   display: none;
 }
 
+.banner-content-container {
+  z-index: 2;
+  position: absolute;
+  border-radius: 0.5rem;
+  margin: 8px;
+  padding: 8px;
+  font-size: 2rem;
+  background-color: var(--bg-color-transparent);
+  left: 0;
+  right: 0;
+  bottom: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20rem;
+  text-align: center;
+  transition: opacity 1s ease;
+}
+
 @media screen and (min-width: 600px) {
   .grid-container {
     margin: 0.8rem;
@@ -32,6 +50,10 @@
 
   .banner-container {
     display: none;
+  }
+
+  .banner-content-container {
+    width: 30rem;
   }
 
   @keyframes fadeIn {

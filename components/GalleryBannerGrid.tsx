@@ -19,9 +19,16 @@ export const GalleryBannerGrid: React.FC<GalleryBannerGridProps> = ({
   const [thirdImg, setThirdImg] = useState<string | undefined>();
   const [fourthImg, setFourthImg] = useState<string | undefined>();
   const [opacities, setOpacities] = useState<number[]>([0, 0, 0, 0]);
+  const [bannerOpacity, setBannerOpacity] = useState(0);
   const [images, setImages] = useState<string[]>(imageUrls);
   const hiddenImages = useRef<string[]>([]);
   const swapIndex = useRef(0);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setBannerOpacity(1);
+    }, 1000);
+  }, []);
 
   useEffect(() => {
     setFirstImg(imageUrls.at(0));
@@ -30,12 +37,10 @@ export const GalleryBannerGrid: React.FC<GalleryBannerGridProps> = ({
     setFourthImg(imageUrls.at(3));
 
     imageUrls.forEach((url, index) => {
-      if (index > 3) {
+      if (index >= IMAGE_LIMIT) {
         hiddenImages.current.push(url);
       }
     });
-
-    // setOpacities(images.map(() => 0));
   }, [imageUrls]);
 
   useEffect(() => {
@@ -92,6 +97,9 @@ export const GalleryBannerGrid: React.FC<GalleryBannerGridProps> = ({
   return (
     <>
       <div className={styles['banner-container']}>
+        <div className={styles['banner-content-container']}>
+          <div>Welcome to Federal Hill!</div>
+        </div>
         <Image
           src={images[0]}
           layout="fill"
@@ -100,6 +108,12 @@ export const GalleryBannerGrid: React.FC<GalleryBannerGridProps> = ({
         />
       </div>
       <div className={styles['grid-container']}>
+        <div
+          className={styles['banner-content-container']}
+          style={{ opacity: bannerOpacity }}
+        >
+          <div>Welcome to Federal Hill!</div>
+        </div>
         {firstImg && (
           <div
             className={styles['grid-item']}
