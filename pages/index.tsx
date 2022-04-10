@@ -29,6 +29,7 @@ const Home: NextPage<HomePagePrismicProps> = ({
     'https://images.prismic.io/fhna/e91181f1-b827-425c-b886-3b2be4b36a0d_fh4.jpg?auto=compress,format',
     'https://images.prismic.io/fhna/3d0588af-9e78-49ed-bfc8-0a0cb8404fdc_fh3.jpg?auto=compress,format',
     'https://images.prismic.io/fhna/e5437efe-ce9c-4cb6-97d2-32c9e3f593b0_fh1.jpg?auto=compress,format',
+    'https://images.prismic.io/fhna/99162152-47f0-4047-bf4e-fd438dff7d88_fh2.jpg?auto=compress,format',
   ];
 
   return (
@@ -43,7 +44,6 @@ const Home: NextPage<HomePagePrismicProps> = ({
       </Head>
       <main>
         <GalleryBannerGrid imageUrls={bannerImages} />
-        {/* <Banner imgUrl={bannerimage.url} description={missionstatement} /> */}
         <AnnouncementsFrame announcements={announcements} />
       </main>
     </div>
